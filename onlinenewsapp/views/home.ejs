@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News</title>
+    <link rel="stylesheet" href="/css/allweather.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                   News Headlines
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-offset-4 is-4">
+                    <form method="POST" action="/">
+                        <div class="field has-addons">
+                            <div class="control is-expanded">
+                                <input class="input" name="country" type="text" placeholder="enter country name">
+                            </div>
+                            <div class="control">
+                                <button class="button is-info">
+                                    country 
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <%for(var i=0;i < contest.length ;i++){%>
+                <div class="col-sm-4">
+                   
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%=contest[i].urlToImage%>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%=contest[i].title%></h5>
+                          <p class="card-text"><%=contest[i].description%></p>
+                          <a href="<%=contest[i].url%>" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                   
+                </div>
+                <%}%>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    </footer>
+</body>
+
+</html>
